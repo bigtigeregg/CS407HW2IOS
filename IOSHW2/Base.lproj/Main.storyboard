@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etgether-style-guide" translatesAutoresizingMaskIntoConstraints="NO" id="C47-68-e5k">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C47-68-e5k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1nI-PK-FsJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C47-68-e5k" secondAttribute="bottom" id="FOL-Zq-iIY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C47-68-e5k" secondAttribute="trailing" constant="-20" id="ZDa-KE-4QG"/>
+                            <constraint firstItem="C47-68-e5k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ZIK-bz-egV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="etgether-style-guide" width="3508" height="2479"/>
+    </resources>
 </document>
