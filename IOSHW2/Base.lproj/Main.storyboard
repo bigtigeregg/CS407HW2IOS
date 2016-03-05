@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,16 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etgether-style-guide" translatesAutoresizingMaskIntoConstraints="NO" id="C47-68-e5k">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GR4-iS-Uwa">
+                                <rect key="frame" x="61" y="46" width="338" height="386"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EvC-4a-cfb">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.106030073" blue="0.05751405775" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Eml-0G-Kgg"/>
+                                            <constraint firstAttribute="width" constant="338" id="Y2e-fc-9gz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-Ot-0aG">
+                                        <rect key="frame" x="0.0" y="70" width="338" height="316"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.83529411760000005" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="338" id="qq8-zP-cwb"/>
+                                            <constraint firstAttribute="height" constant="316" id="uBf-K2-vyu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C47-68-e5k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1nI-PK-FsJ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C47-68-e5k" secondAttribute="bottom" id="FOL-Zq-iIY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C47-68-e5k" secondAttribute="trailing" constant="-20" id="ZDa-KE-4QG"/>
-                            <constraint firstItem="C47-68-e5k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ZIK-bz-egV"/>
+                            <constraint firstItem="GR4-iS-Uwa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Qc-ZM-lLR"/>
+                            <constraint firstItem="GR4-iS-Uwa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZEx-ds-dOu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,7 +51,4 @@
             <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="etgether-style-guide" width="3508" height="2479"/>
-    </resources>
 </document>
