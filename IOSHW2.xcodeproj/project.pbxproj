@@ -16,6 +16,8 @@
 		BEA467E51C8A51090052ED9C /* IOSHW2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467E41C8A51090052ED9C /* IOSHW2Tests.swift */; };
 		BEA467F01C8A51090052ED9C /* IOSHW2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467EF1C8A51090052ED9C /* IOSHW2UITests.swift */; };
 		BEA467FE1C8A8BA40052ED9C /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */; };
+		BEA468001C8A93500052ED9C /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BEA467FF1C8A93500052ED9C /* btn.wav */; };
+		BEA468021C8AA3460052ED9C /* MonthDateTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA468011C8AA3460052ED9C /* MonthDateTap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		BEA467EF1C8A51090052ED9C /* IOSHW2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSHW2UITests.swift; sourceTree = "<group>"; };
 		BEA467F11C8A51090052ED9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		BEA467FF1C8A93500052ED9C /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
+		BEA468011C8AA3460052ED9C /* MonthDateTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDateTap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		BEA467CB1C8A51090052ED9C /* IOSHW2 */ = {
 			isa = PBXGroup;
 			children = (
+				BEA467FF1C8A93500052ED9C /* btn.wav */,
 				BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */,
 				BEA467CC1C8A51090052ED9C /* AppDelegate.swift */,
 				BEA467CE1C8A51090052ED9C /* ViewController.swift */,
@@ -109,6 +114,7 @@
 				BEA467D81C8A51090052ED9C /* LaunchScreen.storyboard */,
 				BEA467DB1C8A51090052ED9C /* Info.plist */,
 				BEA467D31C8A51090052ED9C /* IOSHW2.xcdatamodeld */,
+				BEA468011C8AA3460052ED9C /* MonthDateTap.swift */,
 			);
 			path = IOSHW2;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA468001C8A93500052ED9C /* btn.wav in Resources */,
 				BEA467DA1C8A51090052ED9C /* LaunchScreen.storyboard in Resources */,
 				BEA467D71C8A51090052ED9C /* Assets.xcassets in Resources */,
 				BEA467FE1C8A8BA40052ED9C /* Minecraft.ttf in Resources */,
@@ -268,6 +275,7 @@
 			files = (
 				BEA467CF1C8A51090052ED9C /* ViewController.swift in Sources */,
 				BEA467CD1C8A51090052ED9C /* AppDelegate.swift in Sources */,
+				BEA468021C8AA3460052ED9C /* MonthDateTap.swift in Sources */,
 				BEA467D51C8A51090052ED9C /* IOSHW2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
