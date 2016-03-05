@@ -15,6 +15,7 @@
 		BEA467DA1C8A51090052ED9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA467D81C8A51090052ED9C /* LaunchScreen.storyboard */; };
 		BEA467E51C8A51090052ED9C /* IOSHW2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467E41C8A51090052ED9C /* IOSHW2Tests.swift */; };
 		BEA467F01C8A51090052ED9C /* IOSHW2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467EF1C8A51090052ED9C /* IOSHW2UITests.swift */; };
+		BEA467FE1C8A8BA40052ED9C /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BEA467EB1C8A51090052ED9C /* IOSHW2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSHW2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA467EF1C8A51090052ED9C /* IOSHW2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSHW2UITests.swift; sourceTree = "<group>"; };
 		BEA467F11C8A51090052ED9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		BEA467CB1C8A51090052ED9C /* IOSHW2 */ = {
 			isa = PBXGroup;
 			children = (
+				BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */,
 				BEA467CC1C8A51090052ED9C /* AppDelegate.swift */,
 				BEA467CE1C8A51090052ED9C /* ViewController.swift */,
 				BEA467D01C8A51090052ED9C /* Main.storyboard */,
@@ -237,6 +240,7 @@
 			files = (
 				BEA467DA1C8A51090052ED9C /* LaunchScreen.storyboard in Resources */,
 				BEA467D71C8A51090052ED9C /* Assets.xcassets in Resources */,
+				BEA467FE1C8A8BA40052ED9C /* Minecraft.ttf in Resources */,
 				BEA467D21C8A51090052ED9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +495,7 @@
 				BEA467F61C8A51090052ED9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEA467F71C8A51090052ED9C /* Build configuration list for PBXNativeTarget "IOSHW2Tests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				BEA467F91C8A51090052ED9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEA467FA1C8A51090052ED9C /* Build configuration list for PBXNativeTarget "IOSHW2UITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				BEA467FC1C8A51090052ED9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
