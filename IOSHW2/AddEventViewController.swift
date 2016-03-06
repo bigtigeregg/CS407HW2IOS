@@ -25,6 +25,11 @@ class AddEventViewController: UIViewController, UITextFieldDelegate{
     
     //Events
     @IBAction func btnAddEvent_Click(sender:UIButton){
+        eventMgr.addEvent(selectDate, name: EventNameTextField.text!, desc: EventDescriptionTextField.text!)
+        self.view.endEditing(true)
+        EventNameTextField.text = ""
+        EventDescriptionTextField.text = ""
+        self.navigationController?.popViewControllerAnimated(true)
         print("Button")
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

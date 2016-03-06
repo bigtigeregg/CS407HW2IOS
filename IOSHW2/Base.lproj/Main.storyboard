@@ -997,6 +997,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tblEvents" destination="GLl-Hx-Z2N" id="o91-k6-Aay"/>
                         <segue destination="sGl-b6-hme" kind="push" identifier="toAddEventViewController" id="dk1-z8-KSB"/>
                     </connections>
                 </viewController>

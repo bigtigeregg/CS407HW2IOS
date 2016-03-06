@@ -147,8 +147,7 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toEventListViewController") {
             let eventsList: EventListViewController = segue.destinationViewController as! EventListViewController
-            eventsList.selectDate = sender!.DateComponent
-        }
+            eventsList.selectDate = showingCalenderView        }
     }
 }
 

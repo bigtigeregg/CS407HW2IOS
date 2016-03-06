@@ -12,10 +12,16 @@ class EventListViewController: UIViewController,UITableViewDelegate, UITableView
     
     var selectDate:NSDateComponents!
     
+    @IBOutlet var tblEvents: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        tblEvents.reloadData()
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -24,12 +30,16 @@ class EventListViewController: UIViewController,UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         // need to change here
-        return 3
+        if(eventMgr.myEventDicts[selectDate]==nil){
+            return 0
+        }else{
+            return eventMgr.myEventDicts[selectDate]!.count
+        }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
-//        cell.textLabel?.text = eventMgr.events[indexPath.row].name
-//        cell.detailTextLabel?.text = eventMgr.events[indexPath.row].desc
+        cell.textLabel?.text = eventMgr.myEventDicts[selectDate]![indexPath.row].name
+        cell.detailTextLabel?.text = eventMgr.myEventDicts[selectDate]![indexPath.row].desc
         return cell
     }
     
