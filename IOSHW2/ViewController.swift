@@ -12,9 +12,12 @@ import AVFoundation
 class ViewController: UIViewController {
     // hello
     
+    @IBOutlet weak var monthLabel: UILabel!
+    
     @IBOutlet weak var outputLbl: UILabel!
 
     var btnSound: AVAudioPlayer!
+    var showingCalenderView = NSDateComponents()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +25,32 @@ class ViewController: UIViewController {
         let path = NSBundle.mainBundle().pathForResource("btn",ofType:"wav")
         let soundUrl = NSURL(fileURLWithPath: path!)
         
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
         
         let date = NSDate()
+        
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        
         let curyear =  Int(components.year)
         let curmonth = Int(components.month)
+        
+        showingCalenderView.year = curyear
+        showingCalenderView.month = curmonth
+        
+        let monLabel = MonthCalculate.monthArray[curmonth - 1]
+        monthLabel.text = monLabel
+        
         let curday = components.day
         
-        
-        
-        for i in 7...41{
+        for i in 7...48{
             let eachView = view.viewWithTag(i)!
             let eachTap = MonthDateTap()
             eachTap.addTarget(self, action: "segue:")
@@ -40,18 +58,14 @@ class ViewController: UIViewController {
             eachView.userInteractionEnabled = true
         }
         
+        let startIndex = 7 + MonthCalculate.getStartIndex(showingCalenderView)
         
-        let startIndex = 7 + MonthCalculate.getStartIndex(curmonth,year: curyear)
-        
-        for k in 7...41 {
+        for k in 7...48 {
             let label = view.viewWithTag(k + 100) as! UILabel
             label.text = nil
         }
         
-        
-        
         let endIndex = startIndex + MonthCalculate.getDaysCount(curmonth, year: curyear)-1
-        
         
         for j in startIndex...endIndex
         {
@@ -80,20 +94,59 @@ class ViewController: UIViewController {
     
     @IBAction func datePressed(myview: UIView!){
         btnSound.play()
+        
     }
     
     func getCurMonthDate(){
         NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle:NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
     }
     
-//    func isToday()->Bool
-//    {
-////        let today = NSCalendar.currentCalendar().calender.components([NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.Day, NSCalendarUnit.Weekday], fromDate: NSDate())
-//    }
-    
     func segue(sender : UIGestureRecognizer) {
         btnSound.play()
         print(sender.view?.tag)
+        self.performSegueWithIdentifier("toEventListViewController", sender: sender)
+    }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer){
+        if(sender.direction == .Left){
+            showingCalenderView = MonthCalculate.getLastMonth(showingCalenderView)
+            changeCalendar(showingCalenderView)
+            print("left")
+        }
+        if(sender.direction == .Right){
+            showingCalenderView = MonthCalculate.getNextMonth(showingCalenderView)
+            changeCalendar(showingCalenderView)
+            print("right")
+        }
+    }
+    
+    func changeCalendar(passinDate: NSDateComponents){
+        let curyear =  passinDate.year
+        let curmonth = passinDate.month
+        let monLabel = MonthCalculate.monthArray[curmonth - 1]
+        monthLabel.text = monLabel
+        
+        let startIndex = 7 + MonthCalculate.getStartIndex(passinDate)
+        for k in 7...48 {
+            let label = view.viewWithTag(k + 100) as! UILabel
+            label.text = nil
+        }
+        let endIndex = startIndex + MonthCalculate.getDaysCount(curmonth, year: curyear)-1
+        for j in startIndex...endIndex
+        {
+            // get current month and year
+            let getlabel = view.viewWithTag(j+100) as! UILabel
+            let StringDateNum = String(j - startIndex + 1)
+            let attributedString = NSMutableAttributedString(string: StringDateNum)
+            getlabel.font = UIFont(name: "Minecraft",size: 17)!
+            getlabel.attributedText = attributedString
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toEventListViewController") {
+            let secondVC: EventListViewController = segue.destinationViewController as! EventListViewController
+        }
     }
 }
 

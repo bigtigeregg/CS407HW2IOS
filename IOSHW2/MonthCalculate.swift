@@ -9,8 +9,10 @@
 import Foundation
 
 class MonthCalculate: NSObject{
-    static let monthArray = [1:"Jan", 2:"Feb", 3:"Mar", 4:"Apr", 5:"May", 6:"June",
-        7:"July", 8:"Aug", 9:"Sept", 10:"Oct", 11:"Nov", 12:"Dec"]
+    static let monthArray = ["Jan","Feb", "Mar", "Apr","May","June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+    
+    
+    
     
     class func getDaysCount(month:Int, year:Int)->Int{
         switch (month) {
@@ -47,10 +49,37 @@ class MonthCalculate: NSObject{
             return 28
         }
     }
-    class func getStartIndex(month:Int, year:Int)->Int{
+    
+    class func getLastMonth(passInDate: NSDateComponents)->NSDateComponents{
+        let newMonthYearComponents = passInDate.copy() as! NSDateComponents
+        if passInDate.month == 1 {
+            newMonthYearComponents.setValue(12, forComponent: NSCalendarUnit.Month)
+            newMonthYearComponents.setValue(passInDate.year - 1, forComponent: NSCalendarUnit.Year)
+        } else {
+            newMonthYearComponents.setValue(passInDate.month - 1, forComponent: NSCalendarUnit.Month)
+            newMonthYearComponents.setValue(passInDate.year, forComponent: NSCalendarUnit.Year)
+        }
+        return newMonthYearComponents
+    }
+    
+    class func getNextMonth(passInDate: NSDateComponents)->NSDateComponents{
+        let newMonthYearComponents = passInDate.copy() as! NSDateComponents
+        if passInDate.month == 12 {
+            newMonthYearComponents.setValue(1, forComponent: NSCalendarUnit.Month)
+            newMonthYearComponents.setValue(passInDate.year + 1, forComponent: NSCalendarUnit.Year)
+        } else {
+            newMonthYearComponents.setValue(passInDate.month + 1, forComponent: NSCalendarUnit.Month)
+            newMonthYearComponents.setValue(passInDate.year, forComponent: NSCalendarUnit.Year)
+        }
+        return newMonthYearComponents
+    }
+    
+    
+    class func getStartIndex(passDate : NSDateComponents)->Int{
+        let month = passDate.month
+        let year = passDate.year
         var baseNumber:Int
         var startIndex:Int
-        
         if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
         {
             switch (month) {

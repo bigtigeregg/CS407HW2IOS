@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		BE8295371C8B56D200DFDAB2 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8295361C8B56D200DFDAB2 /* DateCell.swift */; };
 		BE8295391C8B57F200DFDAB2 /* MonthCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8295381C8B57F200DFDAB2 /* MonthCalculate.swift */; };
+		BE82953B1C8B911500DFDAB2 /* SwipePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82953A1C8B911500DFDAB2 /* SwipePage.swift */; };
+		BE82953D1C8BA15B00DFDAB2 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82953C1C8BA15B00DFDAB2 /* EventManager.swift */; };
+		BE82953F1C8BA46F00DFDAB2 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82953E1C8BA46F00DFDAB2 /* EventListViewController.swift */; };
+		BE8295411C8BA9AA00DFDAB2 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8295401C8BA9AA00DFDAB2 /* AddEventViewController.swift */; };
+		BE8295481C8BC24200DFDAB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8295461C8BC24200DFDAB2 /* Main.storyboard */; };
 		BEA467CD1C8A51090052ED9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467CC1C8A51090052ED9C /* AppDelegate.swift */; };
 		BEA467CF1C8A51090052ED9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA467CE1C8A51090052ED9C /* ViewController.swift */; };
-		BEA467D21C8A51090052ED9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA467D01C8A51090052ED9C /* Main.storyboard */; };
 		BEA467D51C8A51090052ED9C /* IOSHW2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEA467D31C8A51090052ED9C /* IOSHW2.xcdatamodeld */; };
 		BEA467D71C8A51090052ED9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA467D61C8A51090052ED9C /* Assets.xcassets */; };
 		BEA467DA1C8A51090052ED9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA467D81C8A51090052ED9C /* LaunchScreen.storyboard */; };
@@ -42,10 +46,14 @@
 /* Begin PBXFileReference section */
 		BE8295361C8B56D200DFDAB2 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		BE8295381C8B57F200DFDAB2 /* MonthCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCalculate.swift; sourceTree = "<group>"; };
+		BE82953A1C8B911500DFDAB2 /* SwipePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePage.swift; sourceTree = "<group>"; };
+		BE82953C1C8BA15B00DFDAB2 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		BE82953E1C8BA46F00DFDAB2 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		BE8295401C8BA9AA00DFDAB2 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		BE8295471C8BC24200DFDAB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA467C91C8A51090052ED9C /* IOSHW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSHW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA467CC1C8A51090052ED9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA467CE1C8A51090052ED9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BEA467D11C8A51090052ED9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA467D41C8A51090052ED9C /* IOSHW2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOSHW2.xcdatamodel; sourceTree = "<group>"; };
 		BEA467D61C8A51090052ED9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA467D91C8A51090052ED9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,7 +121,7 @@
 				BEA467FD1C8A8BA40052ED9C /* Minecraft.ttf */,
 				BEA467CC1C8A51090052ED9C /* AppDelegate.swift */,
 				BEA467CE1C8A51090052ED9C /* ViewController.swift */,
-				BEA467D01C8A51090052ED9C /* Main.storyboard */,
+				BE8295461C8BC24200DFDAB2 /* Main.storyboard */,
 				BEA467D61C8A51090052ED9C /* Assets.xcassets */,
 				BEA467D81C8A51090052ED9C /* LaunchScreen.storyboard */,
 				BEA467DB1C8A51090052ED9C /* Info.plist */,
@@ -121,6 +129,10 @@
 				BEA468011C8AA3460052ED9C /* MonthDateTap.swift */,
 				BE8295361C8B56D200DFDAB2 /* DateCell.swift */,
 				BE8295381C8B57F200DFDAB2 /* MonthCalculate.swift */,
+				BE82953A1C8B911500DFDAB2 /* SwipePage.swift */,
+				BE82953C1C8BA15B00DFDAB2 /* EventManager.swift */,
+				BE82953E1C8BA46F00DFDAB2 /* EventListViewController.swift */,
+				BE8295401C8BA9AA00DFDAB2 /* AddEventViewController.swift */,
 			);
 			path = IOSHW2;
 			sourceTree = "<group>";
@@ -251,10 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA468001C8A93500052ED9C /* btn.wav in Resources */,
+				BE8295481C8BC24200DFDAB2 /* Main.storyboard in Resources */,
 				BEA467DA1C8A51090052ED9C /* LaunchScreen.storyboard in Resources */,
 				BEA467D71C8A51090052ED9C /* Assets.xcassets in Resources */,
 				BEA467FE1C8A8BA40052ED9C /* Minecraft.ttf in Resources */,
-				BEA467D21C8A51090052ED9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +292,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA467CF1C8A51090052ED9C /* ViewController.swift in Sources */,
+				BE8295411C8BA9AA00DFDAB2 /* AddEventViewController.swift in Sources */,
 				BE8295371C8B56D200DFDAB2 /* DateCell.swift in Sources */,
+				BE82953D1C8BA15B00DFDAB2 /* EventManager.swift in Sources */,
 				BEA467CD1C8A51090052ED9C /* AppDelegate.swift in Sources */,
+				BE82953F1C8BA46F00DFDAB2 /* EventListViewController.swift in Sources */,
 				BE8295391C8B57F200DFDAB2 /* MonthCalculate.swift in Sources */,
 				BEA468021C8AA3460052ED9C /* MonthDateTap.swift in Sources */,
 				BEA467D51C8A51090052ED9C /* IOSHW2.xcdatamodeld in Sources */,
+				BE82953B1C8B911500DFDAB2 /* SwipePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,10 +336,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BEA467D01C8A51090052ED9C /* Main.storyboard */ = {
+		BE8295461C8BC24200DFDAB2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BEA467D11C8A51090052ED9C /* Base */,
+				BE8295471C8BC24200DFDAB2 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
