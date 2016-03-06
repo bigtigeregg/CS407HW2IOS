@@ -9,6 +9,11 @@
 import UIKit
 
 class AddEventViewController: UIViewController, UITextFieldDelegate{
+    
+    var selectDate:NSDateComponents!
+    @IBOutlet weak var EventNameTextField: UITextField!
+    @IBOutlet weak var EventDescriptionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -16,6 +21,16 @@ class AddEventViewController: UIViewController, UITextFieldDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    //Events
+    @IBAction func btnAddEvent_Click(sender:UIButton){
+        print("Button")
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();

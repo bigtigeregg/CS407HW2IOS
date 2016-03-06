@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         for i in 7...48{
             let eachView = view.viewWithTag(i)!
             let eachTap = MonthDateTap()
+            eachTap.DateComponent?=showingCalenderView
             eachTap.addTarget(self, action: "segue:")
             eachView.addGestureRecognizer(eachTap)
             eachView.userInteractionEnabled = true
@@ -145,7 +146,8 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toEventListViewController") {
-            let secondVC: EventListViewController = segue.destinationViewController as! EventListViewController
+            let eventsList: EventListViewController = segue.destinationViewController as! EventListViewController
+            eventsList.selectDate = sender!.DateComponent
         }
     }
 }

@@ -11,5 +11,5 @@ import UIKit
 
 
 class MonthDateTap: UITapGestureRecognizer{
-    //var DateComponent : NSDateComponents?
+    var DateComponent : NSDateComponents?
 }

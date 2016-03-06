@@ -919,6 +919,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTh-Gb-207">
                                         <rect key="frame" x="25" y="141" width="550" height="30"/>
                                         <state key="normal" title="Add Event"/>
+                                        <connections>
+                                            <action selector="btnAddEvent_Click:" destination="sGl-b6-hme" eventType="touchUpInside" id="2Fy-hf-ba9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -930,6 +933,11 @@
                                     <constraint firstAttribute="trailing" secondItem="NTh-Gb-207" secondAttribute="trailing" constant="25" id="k6L-Lg-QvB"/>
                                     <constraint firstItem="IzZ-L5-ZBd" firstAttribute="leading" secondItem="NAm-OD-C3a" secondAttribute="leading" constant="30" id="tni-QB-lSe"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bqf-sD-ADI"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -942,6 +950,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="AddNew" id="1f7-RP-h9i"/>
                     <navigationItem key="navigationItem" id="bgd-e0-7PB"/>
+                    <connections>
+                        <outlet property="EventDescriptionTextField" destination="ARM-KO-UgH" id="jhp-dD-9Fq"/>
+                        <outlet property="EventNameTextField" destination="IzZ-L5-ZBd" id="42J-Xa-qrT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCY-k7-epa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -980,10 +992,13 @@
                     <navigationItem key="navigationItem" id="Lom-nx-25Y">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="NkH-iX-MSs">
                             <connections>
-                                <segue destination="sGl-b6-hme" kind="push" id="9hc-bV-y9R"/>
+                                <action selector="bar_AddButton:" destination="Y2p-Ne-Qy5" id="bmA-ke-nPy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="sGl-b6-hme" kind="push" identifier="toAddEventViewController" id="dk1-z8-KSB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUa-h8-TY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

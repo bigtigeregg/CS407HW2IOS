@@ -18,7 +18,16 @@ struct event{
 
 class EventManager:NSObject{
     var events = [event]()
-    func addEvent(name:String, desc:String){
-        events.append(event(name: name, desc: desc))
+    var myEventDicts:[NSDateComponents: [event]]!
+    func addEvent(Date:NSDateComponents, name:String, desc:String){
+        if let tempEventList = myEventDicts[Date]{
+            var curEvent = [event]()
+            curEvent = myEventDicts[Date]!
+            curEvent.append(event(name: name, desc: desc))
+        }else{
+            var curEvent = [event]()
+            curEvent.append(event(name: name, desc: desc))
+            myEventDicts[Date] = curEvent
+        }
     }
 }

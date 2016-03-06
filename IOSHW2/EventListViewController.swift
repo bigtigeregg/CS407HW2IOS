@@ -9,9 +9,14 @@
 import UIKit
 
 class EventListViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+    
+    var selectDate:NSDateComponents!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,6 +31,17 @@ class EventListViewController: UIViewController,UITableViewDelegate, UITableView
 //        cell.textLabel?.text = eventMgr.events[indexPath.row].name
 //        cell.detailTextLabel?.text = eventMgr.events[indexPath.row].desc
         return cell
+    }
+    
+    @IBAction func bar_AddButton(sender: UIButton) {
+        self.performSegueWithIdentifier("toAddEventViewController", sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toAddEventViewController") {
+            let eventsList: AddEventViewController = segue.destinationViewController as! AddEventViewController
+            eventsList.selectDate = selectDate
+        }
     }
     
 }
