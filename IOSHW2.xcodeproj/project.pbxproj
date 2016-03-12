@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE7A540E1C92A8BC009B2DCA /* Calander+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7A540C1C92A8BC009B2DCA /* Calander+CoreDataProperties.swift */; };
+		BE7A540F1C92A8BC009B2DCA /* Calander.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7A540D1C92A8BC009B2DCA /* Calander.swift */; };
 		BE8295371C8B56D200DFDAB2 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8295361C8B56D200DFDAB2 /* DateCell.swift */; };
 		BE8295391C8B57F200DFDAB2 /* MonthCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8295381C8B57F200DFDAB2 /* MonthCalculate.swift */; };
 		BE82953B1C8B911500DFDAB2 /* SwipePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82953A1C8B911500DFDAB2 /* SwipePage.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE7A540C1C92A8BC009B2DCA /* Calander+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calander+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE7A540D1C92A8BC009B2DCA /* Calander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calander.swift; sourceTree = "<group>"; };
 		BE8295361C8B56D200DFDAB2 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		BE8295381C8B57F200DFDAB2 /* MonthCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCalculate.swift; sourceTree = "<group>"; };
 		BE82953A1C8B911500DFDAB2 /* SwipePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePage.swift; sourceTree = "<group>"; };
@@ -94,9 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE7A54101C92A8C5009B2DCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE7A540C1C92A8BC009B2DCA /* Calander+CoreDataProperties.swift */,
+				BE7A540D1C92A8BC009B2DCA /* Calander.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BEA467C01C8A51090052ED9C = {
 			isa = PBXGroup;
 			children = (
+				BE7A54101C92A8C5009B2DCA /* Model */,
 				BEA467CB1C8A51090052ED9C /* IOSHW2 */,
 				BEA467E31C8A51090052ED9C /* IOSHW2Tests */,
 				BEA467EE1C8A51090052ED9C /* IOSHW2UITests */,
@@ -294,11 +308,13 @@
 				BEA467CF1C8A51090052ED9C /* ViewController.swift in Sources */,
 				BE8295411C8BA9AA00DFDAB2 /* AddEventViewController.swift in Sources */,
 				BE8295371C8B56D200DFDAB2 /* DateCell.swift in Sources */,
+				BE7A540F1C92A8BC009B2DCA /* Calander.swift in Sources */,
 				BE82953D1C8BA15B00DFDAB2 /* EventManager.swift in Sources */,
 				BEA467CD1C8A51090052ED9C /* AppDelegate.swift in Sources */,
 				BE82953F1C8BA46F00DFDAB2 /* EventListViewController.swift in Sources */,
 				BE8295391C8B57F200DFDAB2 /* MonthCalculate.swift in Sources */,
 				BEA468021C8AA3460052ED9C /* MonthDateTap.swift in Sources */,
+				BE7A540E1C92A8BC009B2DCA /* Calander+CoreDataProperties.swift in Sources */,
 				BEA467D51C8A51090052ED9C /* IOSHW2.xcdatamodeld in Sources */,
 				BE82953B1C8B911500DFDAB2 /* SwipePage.swift in Sources */,
 			);

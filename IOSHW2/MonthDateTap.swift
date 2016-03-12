@@ -12,4 +12,13 @@ import UIKit
 
 class MonthDateTap: UITapGestureRecognizer{
     var DateComponent : NSDateComponents?
+    var indexTap:Int?
+    func getText()->String{
+        var result:String
+        let year = String(DateComponent?.year)
+        let month = String(DateComponent?.month)
+        let day = String(DateComponent?.day)
+        result = year + month + day
+        return result
+    }
 }

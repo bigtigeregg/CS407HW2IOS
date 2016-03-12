@@ -16,9 +16,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var outputLbl: UILabel!
 
+    var startIndex:Int = 0
+    
+    
     var btnSound: AVAudioPlayer!
     var showingCalenderView = NSDateComponents()
-    
+    var selectMonthDateTap = MonthDateTap()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,16 +53,17 @@ class ViewController: UIViewController {
         
         let curday = components.day
         
-        for i in 7...48{
-            let eachView = view.viewWithTag(i)!
-            let eachTap = MonthDateTap()
-            eachTap.DateComponent?=showingCalenderView
-            eachTap.addTarget(self, action: "segue:")
-            eachView.addGestureRecognizer(eachTap)
-            eachView.userInteractionEnabled = true
-        }
+//        for i in 7...48{
+//            let eachView = view.viewWithTag(i)!
+//            let eachTap = MonthDateTap()
+//            
+//            eachTap.DateComponent?=showingCalenderView
+//            eachTap.addTarget(self, action: "segue:")
+//            eachView.addGestureRecognizer(eachTap)
+//            eachView.userInteractionEnabled = true
+//        }
         
-        let startIndex = 7 + MonthCalculate.getStartIndex(showingCalenderView)
+        startIndex = 7 + MonthCalculate.getStartIndex(showingCalenderView)
         
         for k in 7...48 {
             let label = view.viewWithTag(k + 100) as! UILabel
@@ -70,6 +74,17 @@ class ViewController: UIViewController {
         
         for j in startIndex...endIndex
         {
+                        let eachView = view.viewWithTag(j)!
+                        let eachTap = MonthDateTap()
+            
+                        eachTap.DateComponent?=showingCalenderView
+                        eachTap.addTarget(self, action: "segue:")
+                        eachView.addGestureRecognizer(eachTap)
+                        eachView.userInteractionEnabled = true
+            
+            
+            
+            
             // get current month and year
             let getlabel = view.viewWithTag(j+100) as! UILabel
             //let label = view.viewWithTag(i + 100 + allDayComponents[0].weekday - 1) as! UILabel
@@ -105,6 +120,13 @@ class ViewController: UIViewController {
     func segue(sender : UIGestureRecognizer) {
         btnSound.play()
         print(sender.view?.tag)
+        let selectDay = getTheLabelTag(startIndex,viewTagNum: (sender.view?.tag)!)
+        showingCalenderView.day = selectDay
+        selectMonthDateTap.DateComponent = showingCalenderView
+        selectMonthDateTap.indexTap = sender.view?.tag
+
+        
+        print(selectDay)
         self.performSegueWithIdentifier("toEventListViewController", sender: sender)
     }
     
@@ -127,14 +149,33 @@ class ViewController: UIViewController {
         let monLabel = MonthCalculate.monthArray[curmonth - 1]
         monthLabel.text = monLabel
         
-        let startIndex = 7 + MonthCalculate.getStartIndex(passinDate)
+        startIndex = 7 + MonthCalculate.getStartIndex(passinDate)
         for k in 7...48 {
             let label = view.viewWithTag(k + 100) as! UILabel
             label.text = nil
+            
+            let eachView = view.viewWithTag(k)!
+            let eachTap = MonthDateTap()
+            
+            eachTap.DateComponent?=showingCalenderView
+            eachTap.addTarget(self, action: "segue:")
+            eachView.removeGestureRecognizer(eachTap)
+            eachView.userInteractionEnabled = false
+            
         }
         let endIndex = startIndex + MonthCalculate.getDaysCount(curmonth, year: curyear)-1
         for j in startIndex...endIndex
         {
+            let eachView = view.viewWithTag(j)!
+            let eachTap = MonthDateTap()
+            
+            eachTap.DateComponent?=showingCalenderView
+            eachTap.addTarget(self, action: "segue:")
+            eachView.addGestureRecognizer(eachTap)
+            eachView.userInteractionEnabled = true
+            
+            
+            
             // get current month and year
             let getlabel = view.viewWithTag(j+100) as! UILabel
             let StringDateNum = String(j - startIndex + 1)
@@ -147,7 +188,14 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toEventListViewController") {
             let eventsList: EventListViewController = segue.destinationViewController as! EventListViewController
-            eventsList.selectDate = showingCalenderView        }
+            eventsList.selectDate = selectMonthDateTap
+        }
+    }
+    func getTheLabelTag(startIndex:Int, viewTagNum:Int)->Int{
+        var selectDate:Int = 0
+        selectDate = viewTagNum - startIndex + 1
+        
+        return selectDate
     }
 }
 

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class AddEventViewController: UIViewController, UITextFieldDelegate{
     
-    var selectDate:NSDateComponents!
+    var selectDate:MonthDateTap!
     @IBOutlet weak var EventNameTextField: UITextField!
     @IBOutlet weak var EventDescriptionTextField: UITextField!
     
@@ -25,7 +26,28 @@ class AddEventViewController: UIViewController, UITextFieldDelegate{
     
     //Events
     @IBAction func btnAddEvent_Click(sender:UIButton){
-        eventMgr.addEvent(selectDate, name: EventNameTextField.text!, desc: EventDescriptionTextField.text!)
+        
+        if let title = EventNameTextField.text where title != "" {
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            let entity = NSEntityDescription.entityForName("Calander", inManagedObjectContext: context)!
+            let calander = Calander(entity: entity, insertIntoManagedObjectContext: context)
+
+            calander.date = selectDate.getText()
+            calander.desc = EventDescriptionTextField.text!
+            calander.title = EventNameTextField.text!
+            
+            context.insertObject(calander)
+            do{
+                try context.save()
+            }catch{
+                print("could not save calander")
+            }
+//            eventMgr.addEvent(selectDate.getText(), name: EventNameTextField.text!, desc: EventDescriptionTextField.text!)
+            
+            
+        }
+        
         self.view.endEditing(true)
         EventNameTextField.text = ""
         EventDescriptionTextField.text = ""
